@@ -1,0 +1,246 @@
+<string>
+#1 print(txt1[3:6])
+#2 print(txt1[0:6]) 
+#3 print(txt1.lower()) 
+#4 print(txt1[-9:-5]) 
+#5 print(txt1.upper()) 
+#6 txt1.count('o') 	
+#7 txt1.find('o') 
+#8 len(txt1) 
+#9 txt1.split(" ") 
+#10 txt1.replace('tale','story') 
+#11 'right' in txt1
+
+<list>
+#1 sol[1:3] 
+#2 sol.index('지구') 
+#3 sol[4] = '해왕성'
+#4
+#5 sol.append("토성") # 맨 끝에는 append 사용
+#6 sol.pop(6) # pop은 리턴까지 해줌
+#7 remove.sol[금성]
+#8 del sol[1:4]
+#9 del sol[2]
+#10 sol + sol1
+#11 sorted(sol, reverse=True)
+#12 sorted(sol)
+#13 '만리장성' in sol
+#14 sol1 * 3
+#15 len(sol)
+#16 sol.count('지구')
+#17 sol.clear()
+#18 del(sol)
+
+<Tuple>
+#1 myTuple[0]
+#2 myTuple[1][2]
+#3 myTuple[2][:2]
+#4 myTuple[2][0:3]
+#5 len(myTuple[0])
+#6 '7' in myTuple
+#7 myTuple.index('7')
+#8 myTuple.index('7')
+#9 myTuple.count('7')
+#10 myTuple.index((1,2,3))
+#11 max(myTuple[2])
+#12 min(myTuple[2])
+#13 sum(myTuple[2])
+#14 sum(myTuple[2]) / len(myTuple[2]) 아니면
+import numpy as np
+print(np.mean(myTuple[2]))
+#15 myTuple[2].sort(reverse=True)
+print(myTuple[2])
+
+
+<Set>
+#1 s = set()
+#2 s.add('earth')
+    s.add('sky')
+#3 s.update([1,2])
+#4 s.remove('sky')
+#5.A.union(B)
+#6.A & B 또는
+A.intersection(B)
+#7 A - B 또는
+A.difference(B)
+#8 A.union(B) - C
+A.symmetric_difference(B)
+#9 C.issubset(A)
+#10 A.issuperset(B)
+#11 len(B)
+#12 max(B)
+#13 min(B)
+#14 sum(B)
+#15 sum(B) / len(B)
+#16 sorted(A, reverse=True)
+#17 5 in B
+
+<Dic>
+#1 mydict = {}
+#2 mydict = {
+    'red':4,
+    'blue':3,
+    'green':1
+}
+#3 'blue' in mydict
+#4.len(mydict)
+#5.mydict['red']
+#6.mydict['red'] = 10 # 기존의 있는 key에 값을 대입하면, 기존의 값을 덮어씀
+#7.mydict.keys()
+#8 mydict.values()
+#9 d.items()
+#10 sorted(d.items(), key = lambda x:x[0]) # sorted 함수의 기능을 이용
+#11 sorted(d.items(), key = lambda x:x[1])
+#12 mydict..pop['blue']
+#13 mydict.get('pink') # get()함수는 없는키를 요청할때 에러 발생을 생략
+#14 mydict.setdefault('key' , value) -> key가 존재한다면 해당 value값을 리턴
+		key가 존재하지 않는다면 새로이 키와 value를 추가
+#15 20 in mydict.values()
+#16 mydict['yellow'] = 30
+#17 yourdict = {'파랑':50, '빨강':70}
+      d.update(yourdict)
+
+<If>
+
+#1
+num = int(input("임의의 수 입력"))
+suma = 0
+for i in range(num+1):
+    if i%2 == 0:
+        suma += i
+suma
+
+#2
+names = {
+    'mary':1520,
+    'tom':5214,
+    'park':5478,
+    'sams':5478
+}
+input_name = input("이름을 입력하세요")
+
+if input_name in names:
+    print("{}는".format(input_name), names[input_name])
+else:
+    names[input_name] = 2000
+
+#3
+scores = int(input("점수 입력"))
+
+if scores >= 90:
+    print("당신은 A학점입니다.")
+elif 80 <= scores < 90:
+    print("당신은 B학점입니다.")
+elif 70 <= scores < 80:
+    print("당신은 C학점입니다.")
+else:
+    print("당신은 D학점입니다")
+
+<for>
+
+#1.
+text = 'python is fun'
+for c in text:
+    if c in 'aeiou':
+        print(c.upper(), end=' ')
+#2.
+text = 'python is fun'
+for i in range(len(text)):
+    print(i, text[i])
+또는
+text = 'python is fun'
+for i, j in enumerate(text):
+    print(i, j)
+#3.
+even_list = []
+for i in range(1,21):
+    if i%2 == 0:
+        even_list.append(i)
+even_list
+또는
+even_list = []
+count = 0
+while count < 21:
+    if count%2 == 0:
+        even_list.append(count)
+    count += 1
+even_list
+#4.
+count = 0
+while count < 10:
+    count += 1
+    if count < 3:
+        continue
+    if count > 6:
+        break
+    print(count)
+#5
+x = ['a','b','c','d','e']
+y = ['가','나','다','라','마']
+L = []
+for i in range(len(x)):
+    L.append((x[i],y[i]))
+L
+또는 zip() 을 쓰면
+L = []
+for i in zip(x,y):
+    L.append(i)
+L
+#6
+text = 'computational thinking'
+L1 = []
+for i in range(1, len(text), 2):
+    L1.append(text[i])
+L1
+#7
+li = []
+for i in range(5):
+    li.append(float(input("점수 입력")))
+print(sum(li) / len(li))
+또는
+count = 0
+score_sum = 0
+while count < 5 :
+    score = int(input("점수 입력"))
+    score_sum += score
+    count += 1
+score_sum/5
+#8
+text = 'hello world'
+
+for i, j in enumerate(text):
+    print(i, j)
+#9
+for i in range(2,10):
+    for k in range(1,10):
+        print(f"{i} x {k} = {i*k}")
+또는
+for i in range(1, 10):
+    for j in range(1, 10):
+        print('{0}*{1}={2:>2}'.format(i, j, i*j), end='  ') # {} 안에 들어가는 수는 그 자리에 몇자리를 확보 해놓으라는 뜻
+
+<Fun>
+#1
+def abc(a,b,c):
+    li = [a, b, c]
+    print(max(li),sum(li),(sum(li)/len(li)))
+abc(2,3,4)
+#2
+def ulti(a):
+    if a >= 0:
+        print(a)
+    else:
+        print(-a)
+#3
+num = int(input("임의의 정수"))
+for i in range(1, num ,2):
+    print(i)
+#4
+def S(r):
+    r = float(input("반지름 입력"))
+    print("면적 :", 3.14*r**2)
+
+
+
+
+
